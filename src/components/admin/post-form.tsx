@@ -17,7 +17,9 @@ interface PostFormProps {
 }
 
 export function PostForm({ action, post, submitLabel }: PostFormProps) {
-  const [preview, setPreview] = useState<string | null>(post?.cover_image ?? null);
+  const [preview, setPreview] = useState<string | null>(
+    post?.cover_image ?? null,
+  );
   const [submitting, setSubmitting] = useState(false);
 
   function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -34,7 +36,10 @@ export function PostForm({ action, post, submitLabel }: PostFormProps) {
   }
 
   return (
-    <form action={handleSubmit} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <form
+      action={handleSubmit}
+      className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+    >
       <div className="lg:col-span-2 flex flex-col gap-6">
         <Card>
           <CardHeader className="pb-4">
@@ -70,6 +75,46 @@ export function PostForm({ action, post, submitLabel }: PostFormProps) {
         </Card>
       </div>
 
+      <Card>
+        <CardHeader className="pb-4">
+          <CardTitle className="text-base">Imagem de capa</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {preview ? (
+            <div className="relative aspect-video rounded-lg overflow-hidden mb-4 border border-[var(--border)]">
+              <Image
+                src={preview}
+                alt="Preview da capa"
+                fill
+                className="object-cover"
+                unoptimized={preview.startsWith("blob:")}
+              />
+            </div>
+          ) : (
+            <div className="aspect-video rounded-lg border-2 border-dashed border-[var(--border)] flex flex-col items-center justify-center mb-4 text-[var(--muted-foreground)]">
+              <ImagePlus className="h-8 w-8 mb-2" />
+              <p className="text-xs">Nenhuma imagem selecionada</p>
+            </div>
+          )}
+
+          <Label
+            htmlFor="cover_image"
+            className="flex items-center justify-center gap-2 cursor-pointer rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"
+          >
+            <ImagePlus className="h-4 w-4" />
+            {preview ? "Trocar imagem" : "Selecionar imagem"}
+          </Label>
+          <Input
+            id="cover_image"
+            name="cover_image"
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            className="sr-only"
+          />
+        </CardContent>
+      </Card>
+
       <div className="flex flex-col gap-6">
         <Card>
           <CardHeader className="pb-4">
@@ -80,7 +125,9 @@ export function PostForm({ action, post, submitLabel }: PostFormProps) {
               htmlFor="published"
               className="flex items-center justify-between cursor-pointer rounded-lg border border-[var(--border)] px-4 py-3 hover:bg-[var(--muted)] transition-colors"
             >
-              <span className="text-sm font-medium text-[var(--foreground)]">Publicar post</span>
+              <span className="text-sm font-medium text-[var(--foreground)]">
+                Publicar post
+              </span>
               <span className="relative">
                 <input
                   id="published"
@@ -102,46 +149,6 @@ export function PostForm({ action, post, submitLabel }: PostFormProps) {
               <Upload className="h-4 w-4 mr-2" />
               {submitting ? "Salvando…" : submitLabel}
             </Button>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-4">
-            <CardTitle className="text-base">Imagem de capa</CardTitle>
-          </CardHeader>
-          <CardContent>
-            {preview ? (
-              <div className="relative aspect-video rounded-lg overflow-hidden mb-4 border border-[var(--border)]">
-                <Image
-                  src={preview}
-                  alt="Preview da capa"
-                  fill
-                  className="object-cover"
-                  unoptimized={preview.startsWith("blob:")}
-                />
-              </div>
-            ) : (
-              <div className="aspect-video rounded-lg border-2 border-dashed border-[var(--border)] flex flex-col items-center justify-center mb-4 text-[var(--muted-foreground)]">
-                <ImagePlus className="h-8 w-8 mb-2" />
-                <p className="text-xs">Nenhuma imagem selecionada</p>
-              </div>
-            )}
-
-            <Label
-              htmlFor="cover_image"
-              className="flex items-center justify-center gap-2 cursor-pointer rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"
-            >
-              <ImagePlus className="h-4 w-4" />
-              {preview ? "Trocar imagem" : "Selecionar imagem"}
-            </Label>
-            <Input
-              id="cover_image"
-              name="cover_image"
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              className="sr-only"
-            />
           </CardContent>
         </Card>
       </div>
