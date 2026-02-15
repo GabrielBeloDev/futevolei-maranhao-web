@@ -11,12 +11,17 @@ interface DeletePostButtonProps {
 
 export function DeletePostButton({ postId, postTitle }: DeletePostButtonProps) {
   async function handleDelete() {
-    if (!confirm(`Tem certeza que deseja excluir "${postTitle}"?`)) return;
+    if (!confirm(`Tem certeza que deseja excluir "${postTitle}"? Essa ação não pode ser desfeita.`)) return;
     await deletePost(postId);
   }
 
   return (
-    <Button variant="destructive" size="sm" onClick={handleDelete}>
+    <Button
+      variant="destructive"
+      size="sm"
+      onClick={handleDelete}
+      aria-label={`Excluir post ${postTitle}`}
+    >
       <Trash2 className="h-4 w-4 mr-1" />
       Excluir
     </Button>

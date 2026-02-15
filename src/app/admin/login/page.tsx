@@ -26,7 +26,6 @@ export default function AdminLoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-dark p-4">
       <div className="w-full max-w-sm">
-        {/* Brand */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-vermelho/10 mb-4">
             <Lock className="h-7 w-7 text-vermelho" />
@@ -68,7 +67,7 @@ export default function AdminLoginPage() {
                 />
               </div>
               {error && (
-                <p className="text-sm text-destructive bg-destructive/10 rounded-md px-3 py-2">
+                <p role="alert" className="text-sm text-destructive bg-destructive/10 rounded-md px-3 py-2">
                   {error}
                 </p>
               )}
@@ -77,7 +76,7 @@ export default function AdminLoginPage() {
                 className="w-full h-11 bg-vermelho hover:bg-vermelho/90 text-white font-medium mt-2"
                 disabled={loading}
               >
-                {loading ? "Entrando..." : "Entrar"}
+                {loading ? "Entrando…" : "Entrar"}
               </Button>
             </form>
           </CardContent>
