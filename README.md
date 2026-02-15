@@ -1,6 +1,6 @@
 # Futevôlei Maranhão
 
-Website do Futevôlei Maranhão — Professor Guthemberg Vidal. Aulas, treinos e o melhor do futevôlei em São Luís, Maranhão.
+Website do Futevôlei Maranhão — Professor guthemberg Vidal. Aulas, treinos e o melhor do futevôlei em São Luís, Maranhão.
 
 ## Tech Stack
 
