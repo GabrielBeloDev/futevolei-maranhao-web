@@ -26,13 +26,13 @@ export default async function AdminDashboard() {
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <p className="text-2xl font-bold text-green-600">{publishedCount}</p>
+              <p className="text-2xl font-bold text-green-400">{publishedCount}</p>
               <p className="text-sm text-[var(--muted-foreground)]">Publicados</p>
             </CardContent>
           </Card>
           <Card className="col-span-2 md:col-span-1">
             <CardContent className="p-4 text-center">
-              <p className="text-2xl font-bold text-amber-600">{draftCount}</p>
+              <p className="text-2xl font-bold text-amber-400">{draftCount}</p>
               <p className="text-sm text-[var(--muted-foreground)]">Rascunhos</p>
             </CardContent>
           </Card>
@@ -75,8 +75,8 @@ export default async function AdminDashboard() {
                         variant={post.published ? "default" : "secondary"}
                         className={
                           post.published
-                            ? "bg-green-100 text-green-800 hover:bg-green-100"
-                            : "bg-amber-100 text-amber-800 hover:bg-amber-100"
+                            ? "bg-green-900/50 text-green-300 hover:bg-green-900/50 border-green-700/50"
+                            : "bg-amber-900/50 text-amber-300 hover:bg-amber-900/50 border-amber-700/50"
                         }
                       >
                         {post.published ? "Publicado" : "Rascunho"}

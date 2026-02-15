@@ -89,7 +89,7 @@ export function PostForm({ action, post, submitLabel }: PostFormProps) {
                   defaultChecked={post?.published ?? false}
                   className="peer sr-only"
                 />
-                <span className="block h-6 w-10 rounded-full bg-gray-300 peer-checked:bg-green-500 transition-colors" />
+                <span className="block h-6 w-10 rounded-full bg-[var(--border)] peer-checked:bg-green-500 transition-colors" />
                 <span className="absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform peer-checked:translate-x-4" />
               </span>
             </label>
