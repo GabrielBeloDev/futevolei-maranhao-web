@@ -12,7 +12,7 @@ export const teamMembers: TeamMember[] = [
     bio: "Professor e fundador do Futevôlei Maranhão. Referência no esporte em São Luís.",
     image: "/images/gutho.jpg",
     initials: "GV",
-    instagram: "https://www.instagram.com/guthembergvidal/",
+    instagram: "https://www.instagram.com/Guthembergvidal/",
   },
   {
     name: "Luan",
