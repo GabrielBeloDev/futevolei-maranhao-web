@@ -41,7 +41,7 @@ export function HeroSection() {
 
             <AnimatedSection delay={0.2}>
               <p className="text-lg md:text-xl text-white/70 max-w-lg">
-                Professor Gutenberg Vidal. Aulas, treinos e o melhor do
+                Professor Guthemberg Vidal. Aulas, treinos e o melhor do
                 futevôlei na ilha.
               </p>
             </AnimatedSection>
