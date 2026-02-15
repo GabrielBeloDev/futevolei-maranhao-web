@@ -15,7 +15,7 @@ export function AboutSection() {
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
                 <Image
                   src="/images/gutho.jpg"
-                  alt="Professor Gutenberg Vidal"
+                  alt="Professor Guthemberg Vidal"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -37,15 +37,15 @@ export function AboutSection() {
             <AnimatedSection delay={0.1}>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
                 Professor{" "}
-                <span className="text-vermelho">Gutenberg Vidal</span>
+                <span className="text-vermelho">Guthemberg Vidal</span>
               </h2>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
               <p className="text-white/70 leading-relaxed text-lg">
-                Com anos de experiência no futevôlei, o Professor Gutenberg
-                Vidal é referência no esporte em São Luís, Maranhão. Dedicado
-                ao ensino e à formação de novos atletas, ele lidera o Futevôlei
+                Com anos de experiência no futevôlei, o Professor Guthemberg
+                Vidal é referência no esporte em São Luís, Maranhão. Dedicado ao
+                ensino e à formação de novos atletas, ele lidera o Futevôlei
                 Maranhão com paixão e profissionalismo.
               </p>
             </AnimatedSection>
